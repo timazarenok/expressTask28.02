@@ -17,6 +17,9 @@ ProductGroup.hasMany(Product, { onDelete: "cascade"});
 Unit.hasMany(Product, { onDelete: "cascade"});
 Manufactor.hasMany(Product, { onDelete: "cascade"});
 
-sequelize.sync({force:true}).then(()=>{
-    console.log("Tables have been created");
-}).catch(err=>console.log(err));
+const init = async () => {
+  await sequelize.sync({force:true})
+}
+
+module.exports.Company = Company;
+module.exports.sequelize = sequelize;
