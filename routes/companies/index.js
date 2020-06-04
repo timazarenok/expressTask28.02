@@ -30,6 +30,10 @@ router.get('/:company_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
+  Company.destroy({
+    where: {},
+    truncate: false
+  })
   const companies = req.body.data;
   for(var c of companies)
   {

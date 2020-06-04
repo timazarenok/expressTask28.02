@@ -14,7 +14,7 @@ const Manufactor = require('./manufactor.model')(Sequelize, sequelize);
 const Contracts = require('./contracts.model')(Sequelize, sequelize);
 
 Company.hasMany(Contracts, { onDelete: "cascade"});
-Product.hasMany(Contracts, {onDelete: "cascade"});
+Product.hasMany(Contracts, { onDelete: "cascade"});
 Company.hasMany(Employer, { onDelete: "cascade"});
 ProductGroup.hasMany(Product, { onDelete: "cascade"});
 Unit.hasMany(Product, { onDelete: "cascade"});

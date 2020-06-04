@@ -21,6 +21,10 @@ const CreateManufactor = (m) => Manufactor.create({
   )
   
   router.post('/', (req,res) => {
+    Manufactor.destroy({
+      where: {},
+      truncate: false
+    });
     const manufactors = req.body.data;
     for(var m of manufactors)
     {

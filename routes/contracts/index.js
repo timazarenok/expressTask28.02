@@ -24,6 +24,10 @@ router.get('/:contract_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
+  Contracts.destroy({
+    where: {},
+    truncate: false
+  })
   const contracts = req.body.data;
   for(var c of contracts)
   {

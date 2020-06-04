@@ -18,7 +18,7 @@ router.post('/create', (req, res) => {
 })
 
 router.get('/:product_id/destroy', (req, res) => {
-    models.User.destroy({
+    Product.destroy({
       where: {
         id: req.params.productId
       }
@@ -27,6 +27,10 @@ router.get('/:product_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
+  Product.destroy({
+    where: {},
+    truncate: false
+  })
   const products = req.body.data;
   for(var p of products)
   {

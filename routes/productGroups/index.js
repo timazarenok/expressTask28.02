@@ -23,6 +23,10 @@ router.get('/:productGroup_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
+  ProductGroup.destroy({
+    where: {},
+    truncate: false
+  })
   const productGroups = req.body.data;
   for(var pg of productGroups)
   {
