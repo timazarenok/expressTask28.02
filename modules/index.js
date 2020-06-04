@@ -21,5 +21,7 @@ const init = async () => {
   await sequelize.sync({force:true})
 }
 
+module.exports.ProductGroup = ProductGroup;
+module.exports.Product = Product;
 module.exports.Company = Company;
 module.exports.sequelize = sequelize;
