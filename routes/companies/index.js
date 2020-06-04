@@ -30,7 +30,7 @@ router.get('/:company_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
-  const companies = req.body.companies;
+  const companies = req.body.data;
   for(var c of companies)
   {
     CreateCompany(c);

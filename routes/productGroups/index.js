@@ -23,7 +23,7 @@ router.get('/:productGroup_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
-  const productGroups = req.body.productGroups;
+  const productGroups = req.body.data;
   for(var pg of productGroups)
   {
     CreateProductGroup(pg);

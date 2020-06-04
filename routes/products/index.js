@@ -27,7 +27,7 @@ router.get('/:product_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
-  const products = req.body.products;
+  const products = req.body.data;
   for(var p of products)
   {
     CreateProduct(p);

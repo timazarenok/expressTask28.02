@@ -24,7 +24,7 @@ router.get('/:contract_id/destroy', (req, res) => {
 )
 
 router.post('/', (req,res) => {
-  const contracts = req.body.contracts;
+  const contracts = req.body.data;
   for(var c of contracts)
   {
     CreateContract(c);

@@ -22,7 +22,7 @@ app.use('/contracts', contracts);
 
 
 sequelize.sync({force: false}).then(() => {
-    app.listen(3000);
+    app.listen(4000);
 })
 
 // seq.init().then(() => {

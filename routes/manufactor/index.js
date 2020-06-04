@@ -21,15 +21,16 @@ const CreateManufactor = (m) => Manufactor.create({
   )
   
   router.post('/', (req,res) => {
-    const manufactors = req.body.manufactors;
+    const manufactors = req.body.data;
     for(var m of manufactors)
     {
-      CreateCompany(m);
+      console.log(m)
+      CreateManufactor(m);
     }
   })
   
   router.get('/', (req, res) => {
-      Company.findAll().then(manufactors => {
+    Manufactor.findAll().then(manufactors => {
         res.send(manufactors);
       }).catch(err => console.log(err))
   })
