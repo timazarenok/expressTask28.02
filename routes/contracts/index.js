@@ -4,7 +4,9 @@ var router  = express.Router()
 
 const CreateContract = (c) => Contracts.create({
   number: c.number,
-  seria: c.seria
+  seria: c.seria,
+  companyId: c.companyId,
+  productBarcode: c.productBarcode
 })
 
 router.post('/create', (req, res) => {
@@ -13,7 +15,7 @@ router.post('/create', (req, res) => {
 
 
 router.get('/:contract_id/destroy', (req, res) => {
-    Company.destroy({
+  Contracts.destroy({
       where: {
         id: req.params.contractId
       }

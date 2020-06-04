@@ -6,7 +6,8 @@ const CreateProduct = (p) => {
   Product.create({
       barcode: p.barcode,
       name: p.name,
-      manufactor: p.manufactor,
+      productGroupId: p.productGroupId,
+      manufactorName: p.manufactorName,
       country: p.country
   })
 }

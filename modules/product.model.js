@@ -9,10 +9,6 @@ module.exports = (Sequelize, sequelize) => (
             type: Sequelize.STRING,
             allowNull: false
         },
-        manufactor: {
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
         country: {
             type: Sequelize.STRING,
             allowNull: false

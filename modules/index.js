@@ -21,7 +21,7 @@ Unit.hasMany(Product, { onDelete: "cascade"});
 Manufactor.hasMany(Product, { onDelete: "cascade"});
 
 const init = async () => {
-  await sequelize.sync({force:true})
+  await sequelize.sync({force: false})
 }
 
 module.exports.Contracts = Contracts;

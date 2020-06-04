@@ -1,7 +1,7 @@
 var express = require('express');
 
 var companies = require('./routes/companies');
-var manufactors = require('./routes/manufactors');
+var manufactors = require('./routes/manufactor');
 var products = require('./routes/products');
 var productGroups = require('./routes/productGroups');
 var contracts = require('./routes/contracts');
@@ -21,7 +21,7 @@ app.use('/productGroups', productGroups);
 app.use('/contracts', contracts);
 
 
-sequelize.sync({force:true}).then(() => {
+sequelize.sync({force: false}).then(() => {
     app.listen(3000);
 })
 
