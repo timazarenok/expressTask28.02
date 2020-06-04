@@ -3,7 +3,8 @@ var express = require('express');
 var companies = require('./routes/companies');
 var manufactors = require('./routes/manufactors');
 var products = require('./routes/products');
-var productGroups = require('./routes/productGroups')
+var productGroups = require('./routes/productGroups');
+var contracts = require('./routes/contracts');
 
 var bodyparser = require('body-parser');
 
@@ -17,6 +18,8 @@ app.use('/companies', companies);
 app.use('/manufactors', manufactors);
 app.use('/products', products);
 app.use('/productGroups', productGroups);
+app.use('/contracts', contracts);
+
 
 sequelize.sync({force:true}).then(() => {
     app.listen(3000);
