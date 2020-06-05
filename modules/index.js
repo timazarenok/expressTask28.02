@@ -13,15 +13,28 @@ const Unit = require('./unit.model')(Sequelize, sequelize);
 const Manufactor = require('./manufactor.model')(Sequelize, sequelize);
 const Contracts = require('./contracts.model')(Sequelize, sequelize);
 
-Company.hasMany(Contracts, { onDelete: "cascade"});
-Product.hasMany(Contracts, { onDelete: "cascade"});
+Company.hasMany(Contracts, { 
+  foreignKey: {
+    name: 'customer',
+    allowNull: false
+  },
+  onDelete: "cascade"
+});
+
+Company.hasMany(Contracts, { 
+  foreignKey: {
+    name: 'provider',
+    allowNull: false
+  },
+  onDelete: "cascade"
+})
 Company.hasMany(Employer, { onDelete: "cascade"});
 ProductGroup.hasMany(Product, { onDelete: "cascade"});
 Unit.hasMany(Product, { onDelete: "cascade"});
 Manufactor.hasMany(Product, { onDelete: "cascade"});
 
 const init = async () => {
-  await sequelize.sync({force: false})
+  await sequelize.sync({force: true})
 }
 
 module.exports.Contracts = Contracts;

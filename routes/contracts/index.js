@@ -5,8 +5,9 @@ var router  = express.Router()
 const CreateContract = (c) => Contracts.create({
   number: c.number,
   seria: c.seria,
-  companyId: c.companyId,
-  productBarcode: c.productBarcode
+  customer: c.customer,
+  provider: c.provider,
+  createdAt: c.createdAt
 })
 
 router.post('/create', (req, res) => {

@@ -13,6 +13,6 @@ module.exports = (Sequelize, sequelize) => (
         seria: {
             type: Sequelize.BIGINT(11),
             allowNull: false
-        },
+        }
     })
 )

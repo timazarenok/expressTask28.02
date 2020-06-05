@@ -1,13 +1,8 @@
 module.exports = (Sequelize, sequelize) => (
     sequelize.define("company", {
-        id: {
-            type: Sequelize.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-            allowNull: false
-        },
         name: {
             type: Sequelize.STRING,
+            primaryKey: true,
             allowNull: false
         },
         PAN: {
@@ -36,15 +31,15 @@ module.exports = (Sequelize, sequelize) => (
         },
         isCustomer: {
           type: Sequelize.BOOLEAN,
-          allowNull: false  
+          allowNull: true  
         },
         isProvider: {
             type: Sequelize.BOOLEAN,
-            allowNull: false  
+            allowNull: true  
         },
         isOrganization: {
             type: Sequelize.BOOLEAN,
-            allowNull: false  
+            allowNull: true  
         }
     })
 );
