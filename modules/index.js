@@ -24,7 +24,7 @@ Company.hasMany(Contracts, {
 Company.hasMany(Contracts, { 
   foreignKey: {
     name: 'provider',
-    allowNull: false
+    allowNull: true
   },
   onDelete: "cascade"
 })

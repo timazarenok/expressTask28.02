@@ -1,13 +1,15 @@
-var {Contracts}  = require('../../modules');
+var {Contracts, Company}  = require('../../modules');
 var express = require('express');
 var router  = express.Router()
 
 const CreateContract = (c) => Contracts.create({
-  number: c.number,
-  seria: c.seria,
   customer: c.customer,
   provider: c.provider,
-  createdAt: c.createdAt
+  customerAddress: c.customerAddress,
+  providerAddress: c.providerAddress,
+  createdAt: c.createdAt,
+  seria: c.seria,
+  number: c.number
 })
 
 router.post('/create', (req, res) => {
@@ -16,9 +18,10 @@ router.post('/create', (req, res) => {
 
 
 router.post('/destroy', (req, res) => {
+  console.log(req.body)
   Contracts.destroy({
       where: {
-        id: req.body.contractId
+        id: req.body.id
       }
     })
   }

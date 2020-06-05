@@ -8,10 +8,18 @@ module.exports = (Sequelize, sequelize) => (
         },
         number: {
             type: Sequelize.BIGINT(11),
-            allowNull: false
+            allowNull: true
         },
         seria: {
             type: Sequelize.BIGINT(11),
+            allowNull: true
+        },
+        customerAddress: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        providerAddress: {
+            type: Sequelize.STRING,
             allowNull: false
         }
     })
