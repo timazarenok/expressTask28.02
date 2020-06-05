@@ -11,10 +11,10 @@ const CreateManufactor = (m) => Manufactor.create({
   })
   
   
-  router.get('/:manufactor_id/destroy', (req, res) => {
-      Company.destroy({
+  router.post('/destroy', (req, res) => {
+      Manufactor.destroy({
         where: {
-          id: req.params.manufactorId
+          name: req.body.name
         }
       })
     }

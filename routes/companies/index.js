@@ -20,10 +20,10 @@ router.post('/create', (req, res) => {
 })
 
 
-router.get('/:company_id/destroy', (req, res) => {
+router.post('/destroy', (req, res) => {
     Company.destroy({
       where: {
-        id: req.params.companyId
+        name: req.body.name
       }
     })
   }

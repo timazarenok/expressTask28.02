@@ -15,10 +15,10 @@ router.post('/create', (req, res) => {
 })
 
 
-router.get('/:contract_id/destroy', (req, res) => {
+router.post('/destroy', (req, res) => {
   Contracts.destroy({
       where: {
-        id: req.params.contractId
+        id: req.body.contractId
       }
     })
   }

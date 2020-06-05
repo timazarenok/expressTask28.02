@@ -17,10 +17,10 @@ router.post('/create', (req, res) => {
     Product.create(req.body)
 })
 
-router.get('/:product_id/destroy', (req, res) => {
+router.post('/destroy', (req, res) => {
     Product.destroy({
       where: {
-        id: req.params.productId
+        barcode: req.body.barcode
       }
     })
   }

@@ -13,10 +13,10 @@ router.post('/create', (req, res) => {
 })
 
 
-router.get('/:productGroup_id/destroy', (req, res) => {
+router.post('/destroy', (req, res) => {
     ProductGroup.destroy({
       where: {
-        id: req.params.productGroupId
+        name: req.body.name
       }
     })
   }
