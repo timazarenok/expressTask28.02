@@ -1,42 +1,14 @@
-var { Manufactor } = require("../../modules");
 var express = require("express");
 var router = express.Router();
 
-const CreateManufactor = (m) =>
-  Manufactor.create({
-    name: m.name,
-  });
+const manufactorController = require("../../services/manufactors");
 
-router.post("/create", (req, res) => {
-  CreateManufactor(req.body);
-});
+router.post("/create", manufactorController.create_manufactor);
 
-router.post("/destroy", (req, res) => {
-  Manufactor.destroy({
-    where: {
-      name: req.body.name,
-    },
-  });
-});
+router.post("/destroy", manufactorController.create_manufactors);
 
-router.post("/", (req, res) => {
-  Manufactor.destroy({
-    where: {},
-    truncate: false,
-  });
-  const manufactors = req.body.data;
-  for (var m of manufactors) {
-    console.log(m);
-    CreateManufactor(m);
-  }
-});
+router.post("/", manufactorController.create_manufactors);
 
-router.get("/", (req, res) => {
-  Manufactor.findAll()
-    .then((manufactors) => {
-      res.send(manufactors);
-    })
-    .catch((err) => console.log(err));
-});
+router.get("/", manufactorController.get_all);
 
 module.exports = router;

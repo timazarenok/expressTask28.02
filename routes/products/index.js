@@ -1,47 +1,14 @@
-var {Product}  = require('../../modules');
-var express = require('express');
-var router  = express.Router();
+var express = require("express");
+var router = express.Router();
 
-const CreateProduct = (p) => {
-  Product.create({
-      barcode: p.barcode,
-      name: p.name,
-      productGroupId: p.productGroupId,
-      manufactorName: p.manufactorName,
-      country: p.country
-  })
-}
+const productController = require("../../services/products");
 
-router.post('/create', (req, res) => {
-  console.log(req.body)
-    Product.create(req.body)
-})
+router.post("/create", productController.create_product);
 
-router.post('/destroy', (req, res) => {
-    Product.destroy({
-      where: {
-        barcode: req.body.barcode
-      }
-    })
-  }
-)
+router.post("/destroy", productController.create_products);
 
-router.post('/', (req,res) => {
-  Product.destroy({
-    where: {},
-    truncate: false
-  })
-  const products = req.body.data;
-  for(var p of products)
-  {
-    CreateProduct(p);
-  }
-})
+router.post("/", productController.create_products);
 
-router.get('/', (req, res) => {
-  Product.findAll().then(products => {
-    res.send(products);
-  }).catch(err => console.log(err));
-})
+router.get("/", productController.get_all);
 
 module.exports = router;

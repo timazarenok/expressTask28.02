@@ -1,21 +1,14 @@
-var express = require('express');
-const { Company } = require('../../modules');
-var router  = express.Router();
+var express = require("express");
+var router = express.Router();
 
-router.get('/customers', (req, res) => {
-    Company.findAll({where: {
-        isCustomer: true
-    }}).then(customers => res.send(customers));
-})
+const tablesController = require("../../services/tables");
 
-router.get('/providers', (req, res) => {
-    Company.findAll({where: {
-        isProvider: true
-    }}).then(providers => res.send(providers));
-})
+router.get("/customers", tablesController.get_customers);
 
-router.get('/', (req, res) => {
-    res.send();
-})
+router.get("/providers", tablesController.get_providers);
+
+router.get("/", (req, res) => {
+  res.send();
+});
 
 module.exports = router;
