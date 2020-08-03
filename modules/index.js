@@ -14,6 +14,25 @@ const Manufactor = require("./manufactor.model")(Sequelize, sequelize);
 const Contracts = require("./contracts.model")(Sequelize, sequelize);
 const Driver = require("./driver.model")(Sequelize, sequelize);
 const Car = require("./car.model")(Sequelize, sequelize);
+const CarModel = require("./carModel.model")(Sequelize, sequelize);
+const Route = require("./route.model")(Sequelize, sequelize);
+const Flight = require("./flight.model")(Sequelize, sequelize);
+
+CarModel.hasMany(Car, {
+  foreignKey: {
+    name: "carModel",
+    allowNull: false,
+  },
+  onDelete: "cascade",
+});
+
+Car.hasMany(Flight, {
+  foreignKey: {
+    name: "car",
+    allowNull: false,
+  },
+  onDelete: "cascade",
+});
 
 Company.hasMany(Contracts, {
   foreignKey: {
