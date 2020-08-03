@@ -34,6 +34,13 @@ Car.hasMany(Flight, {
   onDelete: "cascade",
 });
 
+Driver.hasMany(Flight, {
+  foreignKey: {
+    name: "driver_id",
+    allowNull: false,
+  },
+});
+
 Company.hasMany(Contracts, {
   foreignKey: {
     name: "customer",

@@ -18,7 +18,7 @@ module.exports = (Sequelize, sequelize) =>
       allowNull: false,
     },
     personalNumber: {
-      type: Sequelize.BIGINT,
+      type: Sequelize.BIGINT(11),
       allowNull: false,
     },
     class: {
