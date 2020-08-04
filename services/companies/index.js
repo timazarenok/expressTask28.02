@@ -14,9 +14,7 @@ const CreateCompany = (c) =>
     isOrganization: c.isOrganization,
   });
 
-exports.create_company = (req, res) => {
-  CreateCompany(req.body);
-};
+exports.create_company = (req, res) => CreateCompany(req.body);
 
 exports.destroy_company = (req, res) => {
   Company.destroy({

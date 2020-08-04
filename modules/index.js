@@ -17,6 +17,10 @@ const Car = require("./car.model")(Sequelize, sequelize);
 const CarModel = require("./carModel.model")(Sequelize, sequelize);
 const Route = require("./route.model")(Sequelize, sequelize);
 const Flight = require("./flight.model")(Sequelize, sequelize);
+const Wallet = require("./wallet.model")(Sequelize, sequelize);
+const SaleTypes = require("./saleTypes.model")(Sequelize, sequelize);
+const Sale = require("./sale.model")(Sequelize, sequelize);
+const PriceTypes = require("./priceTypes.model")(Sequelize, sequelize);
 
 CarModel.hasMany(Car, {
   foreignKey: {
@@ -67,10 +71,19 @@ const init = async () => {
 };
 
 module.exports.Contracts = Contracts;
+module.exports.Employer = Employer;
 module.exports.Manufactor = Manufactor;
 module.exports.ProductGroup = ProductGroup;
 module.exports.Product = Product;
 module.exports.Company = Company;
 module.exports.sequelize = sequelize;
 module.exports.Car = Car;
+module.exports.CarModel = CarModel;
 module.exports.Driver = Driver;
+module.exports.Route = Route;
+module.exports.Wallet = Wallet;
+module.exports.SaleTypes = SaleTypes;
+module.exports.Sale = Sale;
+module.exports.PriceTypes = PriceTypes;
+module.exports.Flight = Flight;
+module.exports.Unit = Unit;
