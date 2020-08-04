@@ -21,6 +21,23 @@ const Wallet = require("./wallet.model")(Sequelize, sequelize);
 const SaleTypes = require("./saleTypes.model")(Sequelize, sequelize);
 const Sale = require("./sale.model")(Sequelize, sequelize);
 const PriceTypes = require("./priceTypes.model")(Sequelize, sequelize);
+const Brand = require("./brand.model")(Sequelize, sequelize);
+const Country = require("./country.model")(Sequelize, sequelize);
+const CurrentPrice = require("./currentPrice.model")(Sequelize, sequelize);
+const Document = require("./driver.model")(Sequelize, sequelize);
+const DocumentType = require("./documentType.model")(Sequelize, sequelize);
+const GiftSerteficate = require("./giftCertificate.model")(
+  Sequelize,
+  sequelize
+);
+const InternetOrder = require("./internetOrder.model")(Sequelize, sequelize);
+const InternetOrderStatus = require("./internetOrderStatus.model")(
+  Sequelize,
+  sequelize
+);
+const Order = require("./order.model")(Sequelize, sequelize);
+const RetailPrice = require("./retailPrice.model")(Sequelize, sequelize);
+const Warehouse = require("./warehouse.model")(Sequelize, sequelize);
 
 CarModel.hasMany(Car, {
   foreignKey: {
@@ -87,3 +104,14 @@ module.exports.Sale = Sale;
 module.exports.PriceTypes = PriceTypes;
 module.exports.Flight = Flight;
 module.exports.Unit = Unit;
+module.exports.Brand = Brand;
+module.exports.Country = Country;
+module.exports.CurrentPrice = CurrentPrice;
+module.exports.Document = Document;
+module.exports.DocumentType = DocumentType;
+module.exports.GiftSerteficate = GiftSerteficate;
+module.exports.InternetOrder = InternetOrder;
+module.exports.InternetOrderStatus = InternetOrderStatus;
+module.exports.Order = Order;
+module.exports.RetailPrice = RetailPrice;
+module.exports.Warehouse = Warehouse;
