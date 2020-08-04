@@ -1,0 +1,50 @@
+module.exports = (Sequelize, sequelize) => (
+    sequelize.define('giftCertificate', {
+        id: {
+            type: Sequelize.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        number: {
+            type: Sequelize.BIGINT(11),
+            allowNull: false
+        },
+        seria: {
+            type: Sequelize.BIGINT(11),
+            allowNull: false
+        },
+        dateCreate: {
+            type: Sequelize.DATE,
+            allowNull: false
+        },
+        createdFrom: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        validity: {
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        cost: {
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
+        dateSale: {
+            type: Sequelize.DATE,
+            allowNull: true
+        },
+        soldFor: {
+            type: Sequelize.STRING,
+            allowNull: true
+        },
+        dateLastUsed: {
+            type: Sequelize.DATE,
+            allowNull: true
+        },
+        lastUsedFor: {
+            type: Sequelize.STRING,
+            allowNull: true
+        }
+    })
+)
