@@ -1,5 +1,5 @@
 module.exports = (Sequelize, sequelize) =>
-  sequelize.define("route5", {
+  sequelize.define("route", {
     number: {
       type: Sequelize.INTEGER,
       primaryKey: true,
